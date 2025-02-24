@@ -1,17 +1,17 @@
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-    font-family: Poppins;
+	font-family: Poppins;
 }
 
 a {
-    color: black;
-    text-decoration: none;
+	color: black;
+	text-decoration: none;
 }
 
 body {
@@ -30,16 +30,18 @@ ul > li {
 }
 
 .swoopt-icon {
-    font-weight: 500;
-    font-size: 2em;
+    mix-blend-mode: exclusion;
+    z-index: 100;
+	font-weight: 500;
+	font-size: 2em;
 	padding: 10px;
 	gap: 10px;
 	display: flex;
 	align-items: center;
 	top: 0;
 	right: 0;
-	position: absolute;
-    margin-right: 40px;
+	position: fixed;
+	margin-right: 40px;
 }
 
 .swoopt-icon img {
@@ -51,13 +53,18 @@ ul > li {
 	height: 100vh;
 	display: flex;
 	justify-content: flex-start;
+	overflow: hidden;
 	align-items: center;
 }
 
 .pages > * {
-    overflow: auto;
+	overflow: auto;
 	position: relative;
 	flex: none;
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+	justify-content: space-between;
 	padding: 50px;
 	width: 100vw;
 	height: 100vh;
@@ -67,7 +74,8 @@ ul > li {
 	font-size: 2em;
 }
 
-.page-1, .page-7 {
+.page-1,
+.page-7 {
 	text-align: center;
 	gap: 30px;
 	display: flex;
@@ -76,7 +84,8 @@ ul > li {
 	flex-direction: column;
 }
 
-.page-1 .content p, .page-7 .content p {
+.page-1 .content p,
+.page-7 .content p {
 	margin: 30px 0;
 }
 
@@ -98,7 +107,7 @@ ol li {
 	padding: 10px;
 	border: 1px solid white;
 	border-radius: 5px;
-    margin: 0px;
+	margin: 0px;
 }
 .page-3 .swoopt-app-icon {
 	gap: 10px;
@@ -114,24 +123,21 @@ ol li {
 }
 
 .wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.wrapper .image {
+    width: 50%;
 }
 
 .wrapper img {
-    width: 15vw;
+    max-width: 250px;
 }
 
 li img {
 	margin: 30px 10px;
-}
-
-nav {
-	position: absolute;
-	bottom: 10px;
-	left: 50%;
-	translate: -50% -50%;
 }
 
 nav ul {
@@ -141,12 +147,48 @@ nav ul {
 }
 
 .button {
-    border: none;
-    user-select: none;
+	border: none;
+	user-select: none;
 	padding: 12px 25px;
 	background-color: yellow;
 }
 
 ol {
 	margin: 20px;
+}
+
+@media (max-width: 900px) {
+	.pages {
+        margin-top: 50px;
+		width: 100svw;
+		height: 100svh;
+	}
+
+	.pages > * {
+		width: 100svw;
+		height: 100svh;
+	}
+
+	.swoopt-icon {
+        font-size: 1em;
+		margin: 0 10px;
+	}
+
+    .swoopt-icon img {
+        width: 30px;
+    }
+
+	nav ul {
+		width: auto;
+	}
+	.image {
+		margin: 0 auto;
+	}
+
+	.wrapper img {
+		width: 100%;
+	}
+	.wrapper {
+		flex-direction: column;
+	}
 }
